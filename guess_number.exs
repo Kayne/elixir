@@ -1,21 +1,21 @@
 defmodule GuessNumber do
   
   def guess(actual, a..b) do
-    shooted = div(a+b, 2)
-    IO.puts "It is #{ shooted }"
-    shoot( shooted, actual, a..b )
+    shot = div(a+b, 2)
+    IO.puts "Is it #{ shot }"
+    shoot( shot, actual, a..b )
   end
 
-  def shoot( shooted, actual, a.._b ) when shooted > actual do
-    guess( actual, a..shooted-1 )
+  def shoot( shot, actual, a.._b ) when shot > actual do
+    guess( actual, a..shot-1 )
   end
 
-  def shoot( shooted, actual, _a..b ) when shooted < actual do
-    guess( actual, shooted+1..b )
+  def shoot( shot, actual, _a..b ) when shot < actual do
+    guess( actual, shot+1..b )
   end
 
-  def shoot( shooted, shooted, _ ) do
-    IO.puts shooted
+  def shoot( shot, shot, _ ) do
+    IO.puts shot
   end
 
 end
