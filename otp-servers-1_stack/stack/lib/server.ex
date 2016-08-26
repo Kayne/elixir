@@ -21,6 +21,10 @@ defmodule Stack.Server do
   # GenServer implementation
   ###
 
+  def handle_call( :pop, _from, [] ) do
+    { :reply, nil, [] }
+  end
+
   def handle_call( :pop, _from, stack ) do
     [ head | tail ] = stack
     { :reply, head, tail }
